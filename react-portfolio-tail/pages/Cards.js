@@ -5,15 +5,20 @@ import { RiComputerFill } from "react-icons/ri";
 import { DiGoogleAnalytics, DiWindows } from "react-icons/di";
 import { GiProgression } from "react-icons/gi";
 
+
+
+
 const Cards = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
   const [isOpen3, setIsOpen3] = useState(false);
   const [isOpen4, setIsOpen4] = useState(false);
-
+  
   return (
+    
     <div className="lg:flex justify-center gap-10 ">
       <section className="flex-1 text-center align-center mb-20 ">
+        
         <motion.div
           transition={{ layout: { duration: 1, type: "spring" } }}
           layout
@@ -24,11 +29,13 @@ const Cards = () => {
             {" "}
             <div className="mb-6">
               <div className="text-lg lg:text-3xl font-medium pt-8 pb-2 dark:text-white">
-                What i am{" "}
+                What I am{" "}
                 <span className="text-teal-600 font-bold">looking for</span>
               </div>
               <div className="text-6xl flex justify-center gap-16 py-3 text-teal-300">
-                <DiGoogleAnalytics className="cursor-pointer hover:text-teal-100" />
+                
+                <DiGoogleAnalytics   alt="alt"  className="cursor-pointer hover:text-teal-100" />
+              
               </div>
             </div>
           </motion.h2>
@@ -62,7 +69,7 @@ const Cards = () => {
             {" "}
             <div className="mt-4">
               <div className="text-lg  lg:text-3xl  font-medium pt-8 pb-2 dark:text-white">
-                When i <span className="text-teal-600 font-bold"> started</span>
+                When I <span className="text-teal-600 font-bold"> started</span>
               </div>
               <div className="text-6xl flex justify-center gap-16 py-3 text-teal-300 cursor-pointer">
                 <RiComputerFill className="hover:text-teal-100" />

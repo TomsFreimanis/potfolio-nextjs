@@ -1,21 +1,20 @@
 import Head from "next/head";
 import { AiFillLinkedin } from "react-icons/ai";
-import food from "../public/foodproject.jpg";
-import nba from "../public/projectnba.jpg";
-import weather from "../public/weatherapp.jpg";
-import riga from "../public/autoskolariga.jpg";
-import meme from "../public/meme.jpg";
-import { BsInstagram } from "react-icons/bs";
+import { BsGithub, BsInstagram } from "react-icons/bs";
 import Cards from "./Cards";
-
+import MyVideoComponent from './MyVideoComponent'
 import Image from "next/image";
-import myimg from "../public/finalme-removebg-preview.png";
+import myimage from '../public/creteme2-removebg-preview.png'
 import { useState } from "react";
+import { BsFillMoonStarsFill } from "react-icons/bs";
+import Projects from "./Projects";
 
-import { BsFillMoonStarsFill, BsGithub, BsCodeSquare } from "react-icons/bs";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
+  
+  
+  
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -33,23 +32,29 @@ export default function Home() {
               <span className="text-teal-600 font-extrabold ">TF</span>
             </h1>
             <ul className="flex items-center">
+            
               <li>
-                <BsFillMoonStarsFill
-                  onClick={() => setDarkMode(!darkMode)}
-                  className="cursor-pointer text-4xl"
+                
+                < BsFillMoonStarsFill
+                  onClick={() => {
+                    setDarkMode(!darkMode)
+                  }}
+                
+                  className="cursor-pointer text-4xl text-yellow-200"
                 />
+                
               </li>
             </ul>
           </nav>
-          <div className="text-center p-10 py-10">
-            <h2 className="text-6xl py-2 text-teal-600 font-medium md:text-6xl">
+          <div className="text-left p-10 py-10 md:text-center">
+            <h2 className="text-6xl py-2 text-teal-600 font-medium text-left md:text-6xl md:text-center">
               Toms Freimanis
             </h2>
             <h3 className="text-2xl py-2 md:text-3xl dark:text-white">
               Developer and designer.
             </h3>
             <p className="text-md py-5 leading-8 text-gray-500 md:text-xl max-w-lg mx-auto">
-              I design and code beautifully simple things. I enjoy creating
+              I design and code beautifull and simple things. I enjoy creating
               things that live on the internet. My interest in web development
               started back in 2021 when I decided to try make a homepage for a
               friend.
@@ -67,131 +72,25 @@ export default function Home() {
               {" "}
               <BsInstagram className="hover:text-black dark:hover:text-red-600" />
             </a>
+            <a href="https://github.com/TomsFreimanis" target="_blank">
+              {" "}
+              <BsGithub className="hover:text-black dark:hover:text-gray-500" />
+            </a>
           </div>
-          <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-60 h-60 mt-20 overflow-hidden">
-            <Image src={myimg} layout="fill" objectFit="cover" alt="alt" />
+          <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-60 h-60 mt-24 overflow-hidden">
+            <Image src={myimage}   alt="alt" />
           </div>
         </section>
 
         <Cards />
-        <section>
-          <div className="flex flex-col justify-center gap-10 py-10 lg:flex-row lg:flex-wrap">
-            <h3 className="text-5xl py-1  dark:text-white">Portfolio</h3>
+      
+        <MyVideoComponent/>
+        <Projects />
+        <footer className="min-h-min">
+          <div className="text-l flex justify-center  py-10 text-teal-300 ">
+            Designed & Built by Toms Freimanis
           </div>
-          <div className="flex flex-col gap-20 py-10 lg:flex-row lg:flex-wrap">
-            <div className="basis-1/3 flex-1">
-              <Image
-                src={food}
-                className="rounded-lg object-cover shadow-md shadow-teal-600"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-              />
-              <div className="text-4xl flex justify-center gap-16 mt-4 py-2 text-teal-600  cursor-pointer ">
-                <a
-                  href="https://github.com/TomsFreimanis/project13"
-                  target="_blank"
-                >
-                  <BsGithub className="hover:text-black dark:hover:text-white" />
-                </a>
-                <a href="#">
-                  <BsCodeSquare className="hover:text-black dark:hover:text-white" />
-                </a>
-              </div>
-            </div>
-            <div className="basis-1/3 flex-1">
-              <Image
-                src={weather}
-                className="rounded-lg object-cover shadow-md shadow-teal-600"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-              />
-              <div className="text-4xl flex justify-center gap-16 mt-4 py-2 text-teal-600  cursor-pointer ">
-                <a
-                  href="https://github.com/TomsFreimanis/weather"
-                  target="_blank"
-                >
-                  <BsGithub className="hover:text-black dark:hover:text-white" />
-                </a>
-                <a href="#">
-                  <BsCodeSquare className="hover:text-black dark:hover:text-white" />
-                </a>
-              </div>
-            </div>
-            <div className="basis-1/3 flex-1">
-              <Image
-                src={nba}
-                className="rounded-lg object-cover shadow-md shadow-teal-600"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-              />
-              <div className="text-4xl flex justify-center gap-16 mt-4 py-2 text-teal-600  cursor-pointer ">
-                <a href="https://github.com/TomsFreimanis/nba" target="_blank">
-                  <BsGithub className="hover:text-black dark:hover:text-white" />
-                </a>
-                <a href="#">
-                  <BsCodeSquare className="hover:text-black dark:hover:text-white" />
-                </a>
-              </div>
-            </div>
-            <div className="basis-1/3 flex-1">
-              <Image
-                src={riga}
-                className="rounded-lg object-cover shadow-md shadow-teal-600"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-              />
-              <div className="text-4xl flex justify-center gap-16 mt-4 py-2 text-teal-600  cursor-pointer ">
-                <a href="#">
-                  <BsGithub className="hover:text-black dark:hover:text-white" />
-                </a>
-                <a href="https://rigasautoskola.lv/" target="_blank">
-                  <BsCodeSquare className="hover:text-black dark:hover:text-white" />
-                </a>
-              </div>
-            </div>
-            <div className="basis-1/3 flex-1">
-              <Image
-                src={meme}
-                className="rounded-lg object-cover shadow-md shadow-teal-600"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-              />
-              <div className="text-4xl flex justify-center gap-16 mt-4 py-2 text-teal-600  cursor-pointer ">
-                <a
-                  href="https://github.com/TomsFreimanis/memegenerator"
-                  target="_blank"
-                >
-                  <BsGithub className="hover:text-black dark:hover:text-white" />
-                </a>
-                <a href="#">
-                  <BsCodeSquare className="hover:text-black dark:hover:text-white" />
-                </a>
-              </div>
-            </div>
-            <div className="basis-1/3 flex-1">
-              <Image
-                src={food}
-                className="rounded-lg object-cover shadow-md shadow-teal-600"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-              />
-              <div className="text-4xl flex justify-center gap-16 mt-4 py-2 text-teal-600  cursor-pointer ">
-                <a href="#">
-                  <BsGithub className="hover:text-black dark:hover:text-white" />
-                </a>
-                <a href="#">
-                  <BsCodeSquare className="hover:text-black dark:hover:text-white" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
+        </footer>
       </main>
     </div>
   );
